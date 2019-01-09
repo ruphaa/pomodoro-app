@@ -1,3 +1,3 @@
 # pomodoro-app
 
-## Documentation in progress
+### Documentation in progress
