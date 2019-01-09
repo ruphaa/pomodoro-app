@@ -28,6 +28,7 @@ new Vue({
     methods: {
       // starts, pauses and resumes the timer
       startStopTimer: function() {
+        this.sound = null;
         if(this.sessionInterval === null && this.status == "START") {
           this.sessionInterval = setInterval(this.calculateTimer, 1000);
         this.message = "Only you can change your life!";
@@ -50,6 +51,7 @@ new Vue({
       },
       // resets the timer to initial session duration
       resetTimer: function() {
+        this.sound = null;
         this.message = "Let the countdown begin!";
         if (this.sessionInterval !== null) {
           clearInterval(this.sessionInterval);
@@ -73,7 +75,6 @@ new Vue({
             
           } else {
             this.playSound();
-            this.sound = null;
             this.state = "break";
             this.changeState();
           }
